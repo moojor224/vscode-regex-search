@@ -2,12 +2,11 @@ import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
 
-    let command = vscode.commands.registerTextEditorCommand('repo_name.command', (editor: vscode.TextEditor, edit: vscode.TextEditorEdit) => {
-        // do things here
-        vscode.window.showInformationMessage('command has been run');
+    let search = vscode.commands.registerCommand("search", function (editor: vscode.TextEditor, edit: vscode.TextEditorEdit) {
+
     });
 
-    context.subscriptions.push(command);
+    context.subscriptions.push(search);
 }
 
 export function deactivate() { }
