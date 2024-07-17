@@ -1,7 +1,7 @@
 {
     "name": "vscode-regex-search",
-    "displayName": "verbose name",
-    "description": "description",
+    "displayName": "vscode regex search",
+    "description": "use regexes to search for text in vscode",
     "version": "0.0.0",
     "repository": {
         "url": "https://github.com/moojor224/vscode-regex-search"
@@ -20,7 +20,34 @@
                 "command": "vscode-regex-search.search",
                 "title": "Run a regex search"
             }
-        ]
+        ],
+        "configuration": {
+            "title": "Regex Search",
+            "properties": {
+                "vscodeRegexSearch.searches": {
+                    "type": "array",
+                    "description": "List of searches to run",
+                    "items": {
+                        "type": "object",
+                        "description": "A search to run",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "description": "Name of the search"
+                            },
+                            "description": {
+                                "type": "string",
+                                "description": "Description of the search"
+                            },
+                            "pattern": {
+                                "type": "string",
+                                "description": "Regex pattern to search for"
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
     "scripts": {
         "compile": "tsc -p ./",
